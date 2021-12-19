@@ -1,0 +1,124 @@
+﻿<UserControl
+    x:Class="StubbornBrowser.Controls.Menu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StubbornBrowser.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="330"
+    d:DesignWidth="225"
+    mc:Ignorable="d">
+    <UserControl.Effect>
+        <DropShadowEffect
+            BlurRadius="15"
+            Direction="-60"
+            Opacity="0.25" />
+    </UserControl.Effect>
+    <UserControl.Resources>
+        <Style
+            x:Key="ButtonStyle"
+            x:Shared="True"
+            TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Name="border"
+                            Padding="2"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            BorderThickness="1"
+                            CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Storyboard x:Key="sb2" x:Name="sb2">
+            <DoubleAnimation
+                BeginTime="0:0:0:0"
+                Storyboard.TargetProperty="Height"
+                To="275"
+                Duration="00:00:0.25" />
+        </Storyboard>
+        <Storyboard x:Key="sb" x:Name="sb">
+            <DoubleAnimation
+                BeginTime="0:0:0:0"
+                Storyboard.TargetProperty="Height"
+                To="0"
+                Duration="00:00:0.20" />
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid>
+        <Grid
+            x:Name="Main"
+            Margin="20"
+            Background="White">
+            <local:TextIconButton
+                x:Name="SettingsButton"
+                Height="36"
+                Margin="0,1,0,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                PreviewMouseUp="SettingsButton_Click" />
+            <local:TextIconButton
+                x:Name="HistoryButton"
+                Height="36"
+                Margin="0,37,0,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                PreviewMouseUp="HistoryButton_Click" />
+            <local:TextIconButton
+                x:Name="BookmarksButton"
+                Height="36"
+                Margin="0,73,0,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                PreviewMouseUp="BookmarksButton_Click" />
+            <local:TextIconButton
+                x:Name="DownloadsButton"
+                Height="36"
+                Margin="0,109,0,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                PreviewMouseUp="DownloadsButton_Click" />
+            <local:TextIconButton
+                x:Name="FullscreenButton"
+                Height="36"
+                Margin="0,145,0,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                PreviewMouseUp="FullscreenButton_OnPreviewMouseUp" />
+            <local:TextIconButton
+                x:Name="WindowButton"
+                Height="36"
+                Margin="0,181,0,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                PreviewMouseUp="WindowButton_OnPreviewMouseUp" />
+            <local:TextIconButton
+                x:Name="DevButton"
+                Height="36"
+                Margin="0,217,0,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                PreviewMouseUp="DevButton_OnPreviewMouseUp" />
+            <local:TextIconButton
+                x:Name="ScreenButton"
+                Height="36"
+                Margin="0,253,0,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                PreviewMouseUp="ScreenButton_OnPreviewMouseUp" />
+        </Grid>
+    </Grid>
+</UserControl>
+
