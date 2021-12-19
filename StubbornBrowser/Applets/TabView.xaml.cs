@@ -62,7 +62,7 @@ namespace StubbornBrowser
             BrowserSettings s1 = new BrowserSettings();
             s1.LocalStorage = CefState.Enabled;
             s1.Databases = CefState.Enabled;
-            s1.ApplicationCache = CefState.Enabled;
+            s1.LocalStorage = CefState.Enabled;
             WebView.BrowserSettings = s1;
             refreshing = false;
             SnackBar.Visibility = Visibility.Hidden;
